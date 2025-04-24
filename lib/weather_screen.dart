@@ -55,7 +55,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
       }
       return data;
     } catch (e) {
-      // print("Error fetching weather: $e");
       rethrow;
     }
   }
@@ -86,7 +85,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 themeProvider.toggleTheme();
               }
             },
-            icon: Icon(Icons.dark_mode_outlined),
+            icon: ThemeProvider.of(context)!.isDarkMode ? Icon(Icons.dark_mode_outlined) : Icon(Icons.light_mode_outlined),
           ),
         ],
       ),
